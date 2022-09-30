@@ -1,27 +1,26 @@
 {% extends 'base.html' %} {% block content %}
-<form action="create">
-  <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label">제목</label>
-    <input
-      type="text"
-      class="form-control"
-      id="exampleFormControlInput1"
-      name="title"
-      required
-    />
+<div class="container">
+  <div class="m-5">
+    <h1 class="text-center">리뷰 쓰기</h1>
+    <form action="create">
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">제목</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" name="title" required />
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">내용</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="content" required></textarea>
+        <div class="mb-3 mt-3">
+          <label for="formFile" class="form-label">사진 파일 올리기</label>
+          <input class="form-control" type="file" id="formFile">
+        </div>
+        <div class="d-grid gap-2">
+          <button class="btn btn-success mt-4" type="submit">리뷰 쓰기</button>
+          <button type="button" class="btn btn-outline-success"
+            onclick="location.href='{% url 'review:index' %}' ">취소</button>
+        </div>
+      </div>
+    </form>
   </div>
-  <div class="mb-3">
-    <label for="exampleFormControlTextarea1" class="form-label">내용</label>
-    <textarea
-      class="form-control"
-      id="exampleFormControlTextarea1"
-      rows="3"
-      name="content"
-      required
-    ></textarea>
-    <div class="d-grid gap-2">
-      <button class="btn btn-primary" type="submit">Button</button>
-    </div>
-  </div>
-</form>
+</div>
 {% endblock %}

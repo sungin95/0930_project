@@ -1,6 +1,12 @@
 {% extends 'base.html' %} {% block content %}
-<h1>제목: {{review_id.title}}</h1>
-<p>내용: {{review_id.content}}</p>
-<a href="{% url 'review:edit' review_id.pk %}">리뷰 수정</a>
-<a href="{% url 'review:delete' review_id.pk %}">리뷰 삭제</a>
+<div class="text-center m-5">
+    <h1>제목: {{review_id.title}}</h1>
+    <p>내용: {{review_id.content}}</p>
+    <button type="button" class="btn btn-outline-success"
+        onclick="location.href='{% url 'review:index' %}' ">목록으로</button>
+    <button type="button" class="btn btn-success my-3"
+        onclick="location.href='{% url 'review:edit' review_id.pk %}' ">리뷰 수정</button>
+    <button type="button" class="btn btn-outline-success"
+        onclick="location.href='{% url 'review:delete' review_id.pk %}' ">리뷰 삭제</button>
+</div>
 {% endblock %}
