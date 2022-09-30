@@ -1,0 +1,27 @@
+{% extends 'base.html' %} {% block content %}
+<form action="create">
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">제목</label>
+    <input
+      type="text"
+      class="form-control"
+      id="exampleFormControlInput1"
+      name="title"
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">내용</label>
+    <textarea
+      class="form-control"
+      id="exampleFormControlTextarea1"
+      rows="3"
+      name="content"
+      required
+    ></textarea>
+    <div class="d-grid gap-2">
+      <button class="btn btn-primary" type="submit">Button</button>
+    </div>
+  </div>
+</form>
+{% endblock %}
