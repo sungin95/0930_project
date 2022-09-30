@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {% block content %}
-<div class="container">
+<div class="container text-center">
   <div class="m-5">
     <h1 class="text-center">리뷰 서비스</h1>
     <button type="button" class="btn btn-success my-3" onclick="location.href='new' ">리뷰작성</button>
@@ -25,8 +25,8 @@
         </tbody>
       </table> -->
       {% for review in reviews %}
-      <div class="card text-bg-light my-5 mx-auto" style="width: 50%;">
-        <div class="card-header">#{{ review.pk }}</div>
+      <div class="card text-bg-light border-success my-5 mx-auto" style="width: 50%;">
+        <div class="card-header">#{{ review.pk}}</div>
         <div class="card-body">
           <div class="d-flex">
             <img src="{{ image }}" class="rounded-circle me-2 bg-light" style="width: 3rem; height: 3rem;">

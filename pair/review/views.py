@@ -15,13 +15,11 @@ def index(request):
     count = Review.objects.count()
     images = []
 
-    for i in range(count):
-        image = random.choice(img_list)
-        images.append(image)
+    image = random.choice(img_list)
 
     context = {
         "reviews": review,
-        "images": images,
+        "image": image,
     }
     return render(request, "review/index.html", context)
 

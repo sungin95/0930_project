@@ -1,12 +1,25 @@
 {% extends 'base.html' %} {% block content %}
-<div class="text-center m-5">
-    <h1>제목: {{review_id.title}}</h1>
-    <p>내용: {{review_id.content}}</p>
-    <button type="button" class="btn btn-outline-success"
-        onclick="location.href='{% url 'review:index' %}' ">목록으로</button>
-    <button type="button" class="btn btn-success my-3"
-        onclick="location.href='{% url 'review:edit' review_id.pk %}' ">리뷰 수정</button>
-    <button type="button" class="btn btn-outline-success"
-        onclick="location.href='{% url 'review:delete' review_id.pk %}' ">리뷰 삭제</button>
+<div class="container">
+  <div class="m-5">
+    <h1 class="text-center">리뷰 쓰기</h1>
+    <form action="{% url 'review:update' review_id.pk %}">
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">제목</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" name="title" required
+          value=" {{review_id.title}} " readonly/>
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">내용</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="content" required readonly>
+{{ review_id.content }}</textarea>
+        <div class="d-grid gap-2 d-flex mt-4" style="float: right;">
+            <button type="button" class="btn btn-success my-3"
+            onclick="location.href='{% url 'review:edit' review_id.pk %}' ">리뷰 수정</button>
+        <button type="button" class="btn btn-outline-success my-3" 
+            onclick="location.href='{% url 'review:delete' review_id.pk %}' ">리뷰 삭제</button>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
 {% endblock %}
